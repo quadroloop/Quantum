@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+    <head>
+      <script src="socket.io.js"></script>
+
+        <script>
+            var socket = io.connect('http://localhost:5000');
+            function transmit() {
+                socket.emit('fook', {data: 'foo!'});
+            }
+        </script>
+    </head>
+    <body>
+        <img src="logo.PNG" width="150">
+        <button onclick="transmit();">Delta</button>
+    </body>
+</html>
+
+
