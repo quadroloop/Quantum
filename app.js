@@ -4,9 +4,12 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
 var bodyParser = require('body-parser');
+var ks = require('node-key-sender');
+
 
 app.use(express.static('public'));
 app.use(express.static('./public/img'));
+
 
 
 
@@ -22,7 +25,7 @@ app.get(route, function(req, res) {
 
 var route = "/game";
 app.get(route, function(req, res) {
-  res.sendFile(path.join(__dirname, './public/UI/controller.html'));
+  res.sendFile(path.join(__dirname, './public/controller.html'));
 });
 
 var port = 5000;
@@ -43,6 +46,11 @@ io.sockets.on('connection', function(socket) {
     socket.on("revert", (data)=>{
     	console.log("revert requested, by VM!");
     	io.emit("revert",{data: "reload all"});
+    });
+    
+    socket.on("keyStroke",(resKey)=>{
+       console.log("controller event: "+resKey.key); 
+        ks.sendKey(resKey.key);
     });
 
 });

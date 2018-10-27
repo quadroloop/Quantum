@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>
+            Quantum Controller
+       </title>
+        <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="./img/logo.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+ 
+  <link rel="stylesheet" href="./assets/css/all.min.css">
+  <link href="./assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+    </head>
+    <body class="dark-edition">
+        <style>
+            .rightpad {
+                position: absolute;
+                right: 10px;
+                top: 120px;
+            }
+            
+            .leftpad {
+                position: absolute;
+                left: 10px;
+            }
+            
+            #up{
+              position: absolute;
+                top: -10px;
+                left: 100px;
+            }
+            
+            #right {
+                position: absolute;
+                top: 41px;
+                left: 170px;
+            }
+            
+            #left {
+                position: absolute;
+                top: 41px;
+                left: 30px;       
+            }
+            
+            #down {
+                 position: absolute;
+                top: 100px;
+                left: 100px;
+            }
+            
+            
+        </style>
+        <div>
+            <center>
+                <img src="./img/logo.png" width="90px" class="p-3">
+            </center>
+            
+            <div class="p-3 leftpad">
+                <button class="btn btn-lg btn-info btn-just-icon btn-round" id="up" > <i class="fa fa-chevron-up fa-3x"></i></button>
+                <button class="btn btn-lg btn-info btn-just-icon btn-round" id="left" > <i class="fa fa-chevron-left fa-3x"></i></button>
+                <button class="btn btn-lg btn-info btn-just-icon btn-round" id="right" > <i class="fa fa-chevron-right fa-3x"></i></button>
+                <button class="btn btn-lg btn-info btn-just-icon btn-round" id="down" > <i class="fa fa-chevron-down fa-3x"></i></button>
+
+            </div>
+            
+             <div class="p-3 rightpad">
+                <button class="btn btn-lg btn-primary btn-just-icon btn-round" id="punch" > <i class="fa fa-bullseye fa-3x"></i></button>
+                <button class="btn btn-lg btn-danger btn-just-icon btn-round" id="shoot" > <i class="fa fa-bullseye fa-3x"></i></button>
+                <button class="btn btn-lg btn-success btn-just-icon btn-round" id="bomb" > <i class="fa fa-bullseye fa-3x"></i></button>
+                <button class="btn btn-lg btn-warning btn-just-icon btn-round" id="misc" > <i class="fa fa-bullseye fa-3x"></i></button>
+
+            </div>
+            
+        </div>
+    </body>
+    <script src="socket.io.js"></script>
+      <script src="./assets/js/core/jquery.min.js"></script>
+    <script src="controller.js">
+    </script>
+</html>
